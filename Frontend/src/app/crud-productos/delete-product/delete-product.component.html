@@ -1,0 +1,113 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span>Prueba Practica</span></a></h1>
+        
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Productos</a></li>
+          
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+
+    </div>
+  </header>
+<!-- End Header -->
+
+<br><br><br>  
+         
+  
+          <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+      
+                <div class="section-title">
+            
+                    <p>Productos</p>
+                  </div>
+      
+                <div class="row justify-content-center">
+            
+                <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                  
+                  <form role="form" class="php-email-form">
+                    <div class="text-center">
+                        <button type="button" class="btn btn-outline-warning" (click)="createProduct()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg>
+                            Crear Producto
+                        </button>
+                        <button type="button" class="btn btn-outline-warning" (click)="editProduct()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                            </svg>
+                            Editar Producto
+                        </button>
+                        <button type="button" class="btn btn-outline-warning" (click)="readProduct()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-square" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                <path d="M6 11.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                            </svg>
+                            Listar Productos
+                        </button>
+                        <button type="button" class="btn btn-warning" (click)="deleteProduct()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                            Eliminar Producto
+                        </button>
+                    </div>
+
+
+                    <br>
+                    
+                    <div class="wrapper d-flex justify-content-center flex-column px-md-5 px-1">
+            
+                        <div class="row my-4">
+                            <div class="col-md-6"> 
+                                <label><i class="fas fa-user-edit me-2"></i>Nombres *</label> 
+                                <input autocomplete="new-password" cFormControl type="text" id="input" > 
+                            </div>
+                            <div class="col-md-6 pt-md-0 pt-4"> 
+                                <label><i class="fas fa-user-edit me-2"></i>Apellidos *</label> 
+                                <input autocomplete="new-password" cFormControl type="text" id="input"  > 
+                            </div>
+                        </div>
+                        
+                    
+                    </div>
+                    
+
+
+                  </form>
+                </div>
+      
+              </div>
+      
+            </div>
+          </section>
+  
+
+
+
+ <!-- ======= Footer ======= -->
+ <footer id="footer">
+    
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Ninestars</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Desarrollado por <a href="https://github.com/sandraeu/PruebaPractica_SandraJimenez">Sandra Jimenez</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
