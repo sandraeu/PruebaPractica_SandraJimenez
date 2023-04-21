@@ -73,18 +73,24 @@
                     <div class="wrapper d-flex justify-content-center flex-column px-md-5 px-1">
             
                         <div class="row my-4">
-                            <div class="col-md-6"> 
-                                <label><i class="fas fa-user-edit me-2"></i>Nombres *</label> 
-                                <input autocomplete="new-password" cFormControl type="text" id="input" > 
-                            </div>
+                          <div class="col-md-6 pt-md-0 pt-4"> 
+                            <label><i class="fas fa-venus-mars me-2"></i>id producto *</label> 
+                            <select name="country" id="country" [(ngModel)]="tipo" (change)="onKey($event)">
+                                <option *ngFor = "let producto of productos" value="{{producto.id}}">{{producto.id}}</option> 
+                            </select> 
+                        </div>
                             <div class="col-md-6 pt-md-0 pt-4"> 
-                                <label><i class="fas fa-user-edit me-2"></i>Apellidos *</label> 
-                                <input autocomplete="new-password" cFormControl type="text" id="input"  > 
+                                <label><i class="fas fa-user-edit me-2"></i>nombre *</label> 
+                                <input type="text" id="input" [(ngModel)]="nombre" name="nombre" > 
                             </div>
                         </div>
                         
                     
                     </div>
+
+                    <div class="d-flex justify-content-center"> 
+                      <button  type="button" class="btn btn-danger" (click)="eliminar()">Eliminar</button> 
+                  </div>
                     
 
 
@@ -103,9 +109,7 @@
  <footer id="footer">
     
     <div class="container py-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Ninestars</span></strong>. All Rights Reserved
-      </div>
+      
       <div class="credits">
         Desarrollado por <a href="https://github.com/sandraeu/PruebaPractica_SandraJimenez">Sandra Jimenez</a>
       </div>

@@ -72,30 +72,22 @@
                     <table class="table table-hover">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Categoria padre</th>
+                            <th scope="col">producto</th>
+                            <th scope="col">stock</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                          <tr *ngFor = "let producto of productos" >
+                            
+                            <th scope="row">{{producto.categoria}}</th>
+                            <td>{{producto.categoria_padre}}</td>
+                            <td>{{producto.producto}}</td>
+                            <td>{{producto.stock}}</td>
                           </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+                          
                         </tbody>
                       </table>
 
@@ -115,9 +107,7 @@
  <footer id="footer">
     
     <div class="container py-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Ninestars</span></strong>. All Rights Reserved
-      </div>
+      
       <div class="credits">
         Desarrollado por <a href="https://github.com/sandraeu/PruebaPractica_SandraJimenez">Sandra Jimenez</a>
       </div>

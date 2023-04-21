@@ -74,11 +74,11 @@
                         <div class="row my-4">
                             <div class="col-md-6"> 
                                 <label><i class="fas fa-user-edit me-2"></i>Nombre *</label> 
-                                <input autocomplete="new-password" cFormControl type="text" id="input" > 
+                                <input type="text" id="input" [(ngModel)]="nombre" name ="nombre"> 
                             </div>
                             <div class="col-md-6 pt-md-0 pt-4"> 
                                 <label><i class="fas fa-user-edit me-2"></i>Descripción *</label> 
-                                <input autocomplete="new-password" cFormControl type="text" id="input"  > 
+                                <input type="text" id="input" [(ngModel)]="descripcion" name ="descripcion"> 
                             </div>
                         </div>
                         
@@ -86,11 +86,11 @@
                         <div class="row my-md-4 my-2">
                             <div class="col-md-6"> 
                                 <label><i class="fas fa-at me-2"></i>Stock </label> 
-                                <input autocomplete="new-password" cFormControl type="email" id="input" > 
+                                <input type="number" id="input" [(ngModel)]="stock" name="stock"> 
                             </div>
                             <div class="col-md-6 pt-md-0 pt-4"> 
                                 <label><i class="fas fa-venus-mars me-2"></i>Tipo *</label> 
-                                <select name="country" id="country">
+                                <select name="country" id="country" [(ngModel)]="tipo">
                                     <option value="">Seleccionar</option>
                                     <option value="PRODUCTO">Producto</option>
                                     <option value="CATEGORIA">Categoria</option> 
@@ -99,11 +99,24 @@
                                
                         </div>
                         
+                        <div class="row my-md-4 my-2">
+                          <div class="col-md-6 pt-md-0 pt-4"> 
+                            <label><i class="fas fa-venus-mars me-2"></i>id categoria </label> 
+                            <select name="country" id="country" [(ngModel)]="id_categoria" (change)="onKey($event)">
+                                <option *ngFor = "let producto of productos" value="{{producto.id}}">{{producto.id}}</option> 
+                            </select> 
+                        </div>
+                          <div class="col-md-6"> 
+                              <label><i class="fas fa-at me-2"></i>Nombre categoria </label> 
+                              <input type="text" id="input" [(ngModel)]="nombre_catego" name="nombre_catego" readonly> 
+                          </div>
+                          
+                      </div>
 
                     </div>
                     
                     <div class="d-flex justify-content-center"> 
-                        <button  type="button" class="btn btn-success">Crear</button> 
+                        <button  type="button" class="btn btn-success" (click)="crear()">Crear</button> 
                     </div>
 
 
@@ -122,9 +135,7 @@
  <footer id="footer">
     
     <div class="container py-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Ninestars</span></strong>. All Rights Reserved
-      </div>
+      
       <div class="credits">
         Desarrollado por <a href="https://github.com/sandraeu/PruebaPractica_SandraJimenez">Sandra Jimenez</a>
       </div>

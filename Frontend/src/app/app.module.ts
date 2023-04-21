@@ -7,7 +7,9 @@ import { CreateProductComponent } from './crud-productos/create-product/create-p
 import { EditProductComponent } from './crud-productos/edit-product/edit-product.component';
 import { DeleteProductComponent } from './crud-productos/delete-product/delete-product.component';
 import { ReadProductsComponent } from './crud-productos/read-products/read-products.component';
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    HttpClientModule,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
