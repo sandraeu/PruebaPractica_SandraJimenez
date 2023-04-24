@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { mMsg } from 'src/models/mMsg';
 import { environment } from 'src/environments/environment';
-import { mProducts } from 'src/models/mProducts';
+import { mAllProducts, mProducts } from 'src/models/mProducts';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +30,7 @@ export class ProductsService {
   }
 
   getProducts(){
-    return this.http.get<any>(`${environment.servidor}product/get`);
+    return this.http.get<mProducts>(`${environment.servidor}product/get`);
   }
 
   getCategorias(){
@@ -38,7 +38,7 @@ export class ProductsService {
   }
 
   getAll(){
-    return this.http.get<any>(`${environment.servidor}product/read`);
+    return this.http.get<mAllProducts>(`${environment.servidor}product/read`);
   }
 
   delete(tipo: number, id: string){

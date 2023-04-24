@@ -256,14 +256,25 @@ def read_product():
 
             myresult = cursor.fetchall()
 
+            productos = []
+
+            for x in myresult:
+                productos.append({
+                    
+                    "categoria_hija": x[1],
+                    "categoria_padre": x[2],
+                    "producto": x[3],
+                    "stock": x[4] 
+                })    
+
             mysql.connection.commit()
             cursor.close()
 
-            return {'productos' : myresult}
+            return {'response' : productos}
         except:
             mysql.connection.rollback()
 
-        return {'msg' : 'se produjo un error'}
+        return {'response' : 'Se produjo un error al momento de realizar la consulta en la base de datos.'}
 
 
 @app.route('/product/delete', methods = ['POST'])
@@ -272,7 +283,7 @@ def delete_product():
         content = request.get_json()
         
         id_producto = content['id_producto']
-        #id_categoria = content['id_categoria']
+        
         print(id_producto)
 
         sql = ''' DELETE FROM PRODUCTO WHERE id_producto = %s '''
@@ -284,10 +295,11 @@ def delete_product():
 
             mysql.connection.commit()
             cursor.close()
+            return {'msg' : 'Se elimino el producto exitosamente'}
         except:
             mysql.connection.rollback()
 
-        return {'msg' : 'Se elimino el producto exitosamente'}
+        return {'msg' : 'Se produjo un error al eleminar el producto'}
 
 @app.route('/category/delete', methods = ['POST'])
 def delete_category():

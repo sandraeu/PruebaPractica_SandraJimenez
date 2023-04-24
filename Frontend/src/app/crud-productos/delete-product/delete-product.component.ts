@@ -31,7 +31,6 @@ export class DeleteProductComponent implements OnInit {
   }
 
   onKey(event: any) { 
-    console.log('evento')
     for(let x of this.productos){
       if(x.id == this.tipo){
         this.nombre = x.nombre; 
